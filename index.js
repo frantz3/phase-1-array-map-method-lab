@@ -12,5 +12,22 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const titleCasedTutorials = tutorials.map(function (tutStr){
+
+    return capitalizedTutorials(tutStr);
+
+  })
+  return titleCasedTutorials;
 }
+
+function capitalizedTutorials(tutStr) {
+  // return tutString[0].toUpperCase() + tutString.slice(1).toLowerCase()
+  const answer = [];
+  const strArr = tutStr.split(' ');
+  for(let element of strArr) {
+    answer.push(element[0].toUpperCase() + element.slice(1));
+  }
+  return answer.join(' ')
+}
+
+// console.log(capitalizedTutorials("what is JSNOP"))
